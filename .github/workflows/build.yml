@@ -6,10 +6,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest, macos-latest, ubuntu-latest]
-        build_type: [RelWithDebInfo, Debug]
-        ui: [gui, cli]
-        scripting: [lua, noscripts]
+        os: [windows-latest, ubuntu-latest]
+        build_type: [RelWithDebInfo]
+        ui: [gui]
+        scripting: [lua]
         exclude:
           - build_type: Debug
             ui: gui
@@ -115,5 +115,5 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: aseprite-binaries
+        name: ${{ github.job }}-${{ github.sha }}-as-bin
         path: build/bin
