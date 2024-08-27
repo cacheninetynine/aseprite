@@ -113,7 +113,7 @@ jobs:
         cd tests
         $XVFB bash run-tests.sh
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
-        name: ${{ github.job }}-${{ github.sha }}-as-bin
-        path: build/bin
+        name: ${{ martix.os }}-${{ github.sha }}-bin.zip
+        path: build/bin/aseprite
