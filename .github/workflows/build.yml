@@ -116,4 +116,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.os }}-${{ github.sha }}-bin.zip
-        path: build/bin/aseprite
+        path: build/bin
